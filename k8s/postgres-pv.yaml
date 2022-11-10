@@ -1,0 +1,15 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: postgres-pv
+  labels:
+    component: postgres
+spec:
+  capacity:
+    storage: 5Gi
+  accessModes:
+  - ReadWriteOnce
+  - ReadWriteMany
+  persistentVolumeReclaimPolicy: Delete
+  hostPath:
+    path: /tmp/microsvc
